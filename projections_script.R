@@ -16,4 +16,6 @@ data_test_scaled <- autoscaling(data_test, data_test_mean, data_test_std)
 # also save mean and std
 
 scores,loadings <- pca(data_train_scaled)
+scores_projected <- data_test_scaled * loadings
 
+visualization(c[scores;scores_projected])
